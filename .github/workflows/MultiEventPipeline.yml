@@ -11,13 +11,15 @@ on:
 
 
 jobs:
-    on-push: # job name
+    on-push: # job1
+        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps: # Step to executed in job
             - name: "Running on master push" # Step 1
               run: echo "Running on master/test push"
 
-    on-pull-request:
+    on-pull-request: # job2
+        if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps: # Step to executed in job
             - name: "Running on pull request" # Step 1
