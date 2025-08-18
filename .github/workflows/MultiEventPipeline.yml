@@ -6,7 +6,10 @@ on:
             - test
     pull_request:  
         branches:
-            - master    
+            - master  
+        types:
+            - closed 
+            - opened   
     workflow_dispatch:
 
 
@@ -26,6 +29,7 @@ jobs:
         steps: # Step to executed in job
             - name: "Running on pull request" # Step 1
               run: echo "Running on pull request"
+      
      
     on_workflow_dispatch: # job3
         if: github.event_name == 'workflow_dispatch'
