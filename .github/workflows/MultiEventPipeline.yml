@@ -6,10 +6,18 @@ on:
             - test
     pull_request:  
         branches:
+<<<<<<< HEAD
+            - master  
+        types:
+            - closed 
+            - opened   
+    workflow_dispatch:
+=======
             - master 
         types:
             - closed      
     workflow_dispatch:   
+>>>>>>> 12a041ccef3a56c1eb72714357af0156b46dc2dc
 
 
 
@@ -28,6 +36,9 @@ jobs:
         steps: # Step to executed in job
             - name: "Running on pull request" # Step 1
               run: echo "Running on pull request"
+<<<<<<< HEAD
+      
+=======
 
     on-pull-request-closed:
         if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -35,6 +46,7 @@ jobs:
         steps:
             - name: "Running on pull request closed"
               run: echo "Running on pull request closed"
+>>>>>>> 12a041ccef3a56c1eb72714357af0156b46dc2dc
      
     on_workflow_dispatch: # job3
         if: github.event_name == 'workflow_dispatch'
